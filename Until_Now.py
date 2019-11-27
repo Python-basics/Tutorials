@@ -6894,7 +6894,6 @@
 
 
 
-
 ### numpy vstack function
 ##
 ##import numpy as np
@@ -6903,7 +6902,6 @@
 ##x = np.array([0,22,28,17])
 ##
 ##y = np.array([14,5,9,20])
-
 
 
 ### sql name of the tables in database
@@ -6919,7 +6917,6 @@
 ##
 ##
 ##cur.execute('SELECT name from sqlite_master where type="table"')
-
 
 
 
@@ -7035,9 +7032,7 @@
 ##plt.show()
 
 
-
-
-### pandas dataframe more with describe method
+### pandas dataframe more with describeethod
 ##
 ##
 ##
@@ -7195,8 +7190,6 @@
 ##import calendar
 
 
-
-
 ### difference between ttk and tk
 ##
 ##import tkinter as tk
@@ -7241,11 +7234,6 @@
 ##password_label.pack()
 ##password = ttk.Entry(win).pack()
 ##win.mainloop()
-
-
-
-
-
 
 
 ### maptplotlib twin plots different types
@@ -7298,9 +7286,6 @@
 ##
 ##fig.legend(bbox_to_anchor=(.32,.88))
 ##plt.show()
-
-
-
 
 ### pygame Sprite Boundary
 ## 
@@ -7418,11 +7403,6 @@
 ##    clock.tick(30)
 
 
-
-
-
-
-
 ### pandas reset_index method
 ##
 ##
@@ -7450,16 +7430,6 @@
 ##
 ##no_friday.to_excel('no_friday.xlsx')
 ##
-
-
-
-
-
-
-
-
-
-
 
 
 #### numpy linspace Sunday
@@ -7593,9 +7563,6 @@
 ##    clock.tick(30)
 
 
-
-
-
 ### sqlite sql keyword order 
 ##
 ##
@@ -7618,8 +7585,6 @@
 ##
 ##
 ##import calendar
-
-
 
 
 
@@ -7654,14 +7619,6 @@
 ##label.pack()
 ##
 ##win.mainloop()
-
-
-
-
-
-
-
-
 
 
 ##import numpy as np
@@ -7754,9 +7711,6 @@
 
 
 # 600
-
-
-
 
 
 ### pygame Sprite Group Collide
@@ -7887,16 +7841,11 @@
 ##    clock.tick(30)
 
 
-
-
 ### pandas fillna method
 ##
 ##
 ##import pandas as pd
 ##import numpy as np
-
-
-
 
 
 
@@ -7947,33 +7896,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
 # channel playlists
-
-
-
-
-
-
-
 
 
 ### install django  
 ##
 ##
 ##import django
-
-
-
-
 
 
 ### tkinter pop up window 
@@ -8149,169 +8078,6 @@
 ##    bad_sprites.update()
 ##    win.update()
 ##    clock.tick(30)
-
-
-
-# pandas Connect to Sqlite DataBase
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##import numpy as np
-##from matplotlib import pyplot as plt
-##from matplotlib.ticker import MultipleLocator
-##import calendar as c
-##
-##ot = [300,700,600,200,500,1000,500,800,100,400,200,500]
-##
-##
-###ot = [300,700,600,200,500,1000,500,800,100,400,200,500]
-##
-##mon_per = np.array([  8.33333333,  16.66666667,  25.        ,  33.33333333,
-##        41.66666667,  50.        ,  58.33333333,  66.66666667,
-##        75.        ,  83.33333333,  91.66666667, 100.        ])
-##    
-##mon_per = mon_per[:len(ot)]
-##
-##
-##fig,ax1 = plt.subplots(figsize=(14,6))
-##
-##mon = np.arange(1,len(mon_per)+1)
-##
-##tot = 0
-##ot_p = []
-##for i in ot:
-##    tot += i
-##    ot_p.append(tot)
-##
-##
-##
-##bins = np.arange(1,len(ot)+1)
-##plt.xticks(np.arange(1,len(ot)+1),c.month_abbr[1:len(ot)+1], rotation = 60)
-##ot_per = np.array(ot_p)*100/6000
-##    
-###plt.xticks(bins)
-##ax1.plot(bins, np.full(len(ot),500), linewidth=2, color='c',label='Baseline')
-##ax1.bar(bins,ot)
-##
-##ax2 = ax1.twinx()
-##ax2.plot(mon,ot_per,linewidth=2,color='r',label='OT %/Buget')
-##ax2.plot(mon,mon_per,linewidth=4, color='g',label='Baseline %')
-##
-##ax3 = ax1.twinx()
-##ax3.spines['right'].set_position(('axes',1.15))
-##ax3.plot(mon,ot_p,linewidth=3,color='k',label='Acumulative Overtime')
-##
-####majorLocator = MultipleLocator(2)
-####ax1.yaxis.set_major_locator(majorLocator)
-##
-##
-##plt.title('Overtime Cost and Percent')
-##ax1.set_xlabel('Month')
-##ax1.set_ylabel('Monthly Budget')
-##ax2.set_ylabel('% of Yearly Budget')
-##ax3.set_ylabel("Overtime Total", labelpad=20)
-##
-##fig.legend(bbox_to_anchor=(.4,.9))
-##plt.show()
-
-
-
-
-
-
-
-#######################################################################
-##
-
-##import numpy as np
-##from matplotlib import pyplot as plt
-##from matplotlib.ticker import MultipleLocator
-##import calendar as c
-##
-##ot = [300,700,600,200,500,1000,500,800,100,400,200,500]
-##
-##
-##ot = [300,700,600,200,500,1000,500,800,100,400,200,500]
-##
-##mon_per = np.array([  8.33333333,  16.66666667,  25.        ,  33.33333333,
-##        41.66666667,  50.        ,  58.33333333,  66.66666667,
-##        75.        ,  83.33333333,  91.66666667, 100.        ])
-##    
-##mon_per = mon_per[:len(ot)]
-##
-##
-##fig,ax1 = plt.subplots(figsize=(6,4))
-##
-##mon = np.arange(1,len(mon_per)+1)
-##
-##tot = 0
-##ot_p = []
-##for i in ot:
-##    tot += i
-##    ot_p.append(tot)
-##
-##
-##
-##bins = np.arange(1,len(ot)+1)
-##plt.xticks(np.arange(1,len(ot)+1),c.month_abbr[1:len(ot)+1], rotation = 60)
-##ot_per = np.array(ot_p)*100/6000
-##    
-##plt.xticks(bins)
-##ax1.plot(bins, np.full(len(ot),500), linewidth=2, color='c',label='Baseline')
-##ax1.bar(bins,ot)
-##
-##ax2 = ax1.twinx()
-##ax2.plot(mon,ot_per,linewidth=2,color='r',label='OT %/Buget')
-##ax2.plot(mon,mon_per,linewidth=4, color='g',label='Baseline %')
-##
-##ax3 = ax1.twinx()
-##ax3.spines['right'].set_position(('axes',1.15))
-##ax3.plot(mon,ot_p,linewidth=3,color='k',label='Acumulative Overtime')
-##
-##majorLocator = MultipleLocator(2)
-##ax1.yaxis.set_major_locator(majorLocator)
-##
-##
-##plt.title('Overtime Cost and Percent')
-##ax1.set_xlabel('Month')
-##ax1.set_ylabel('Monthly Budget')
-##ax2.set_ylabel('% of Yearly Budget')
-##ax3.set_ylabel("Overtime Total", labelpad=10)
-##
-##fig.legend(bbox_to_anchor=(.5,.85))
-##plt.show()
-
 
 
 
