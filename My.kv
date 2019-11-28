@@ -1,0 +1,54 @@
+Start:
+    orientation: 'vertical'
+    user: user_box
+    password: pass_box
+    Label:
+        size_hint_x: 2
+    BoxLayout:
+        spacing: 46
+        height: '30dp'
+        size_hint_y: None
+        Label:
+            width: '274dp'
+            size_hint_x: None
+            text: "User Name"
+            pos_hint_x: 2
+            text_size: self.size
+            halign:'right'
+            valign:'center'
+        TextInput:
+            id: user_box
+            width: '320dp'
+            size_hint_x: None
+    BoxLayout:
+        height: '30dp'
+        size_hint_y: None
+        Label:
+            size_hint_x: 1
+        Label:
+            size_hint_x: 1
+            text: "Password"
+        TextInput:
+            id: pass_box
+            size_hint_x: 2
+
+        Label:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+        BoxLayout:
+            Label:
+            Button:
+                width: '150dp'
+                size_hint_x: None
+                text: "Login"
+                on_press: print(root.user.text)
+            Label:
+        Label:
+        BoxLayout:
+            Label:
+            Button:
+                text: "?? Create Account ??"
+                on_press: root.add_user()
+            Label:
+        Label:
