@@ -1,0 +1,8 @@
+# pandas ffill / bfill methods Sunday 12/15/19 637  
+
+
+df = pd.DataFrame([[np.nan, 2, np.nan, 0],
+                   [3, 4, np.nan, 1],
+                   [np.nan, np.nan, 2, 5],
+                   [np.nan, 3, np.nan, 4]],
+                   columns=list('ABCD'))
