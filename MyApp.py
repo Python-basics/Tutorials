@@ -5,8 +5,10 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
 import sqlite3 as sql
+from kivy.uix.screenmanager import ScreenManager,Screen
 
-class Start(BoxLayout):
+
+class Start(Screen):
     user = ObjectProperty()
     password = ObjectProperty()
 
@@ -16,22 +18,34 @@ class Start(BoxLayout):
     def add_user(self):
         con = sql.connect('user.db')
         cur = con.cursor()
-        cur.execute("""INSERT INTO id (user,password) VALUES (?,?)""",(self.user.text,self.password.text)
+        cur.execute(""" INSERT INTO id (user,password) VALUES (?,?)""",(self.user.text,self.password.text)
                     )
         con.commit()
         con.close()
 
+class Second(Screen):
+    pass
+
+class Manager(ScreenManager):
+    pass
+
 
 
 class MyApp(App):
-    con = sql.connect('user.db')
-    cur = con.cursor()
-    cur.execute(""" CREATE TABLE id(
-    user text,
-    password text)
-    """)
-    con.commit()
-    con.close()
+    try:
+
+        con = sql.connect('user.db')
+        cur = con.cursor()
+        cur.execute(""" CREATE TABLE id(
+            user text,
+            password text)
+            """)
+        con.commit()
+        con.close()
+    except:
+        pass
+
+
 
 if __name__ == '__main__':
     MyApp().run()
