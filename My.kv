@@ -1,4 +1,10 @@
-Start:
+Manager:
+    Start:
+    Second:
+
+
+<Start>:
+    name: 'Start'
     orientation: 'vertical'
     user: user_box
     password: pass_box
@@ -17,6 +23,7 @@ Start:
             halign:'right'
             valign:'center'
         TextInput:
+            write_tab: False
             id: user_box
             width: '320dp'
             size_hint_x: None
@@ -29,6 +36,7 @@ Start:
             size_hint_x: 1
             text: "Password"
         TextInput:
+            write_tab: False
             id: pass_box
             size_hint_x: 2
 
@@ -43,6 +51,8 @@ Start:
                 size_hint_x: None
                 text: "Login"
                 on_press: print(root.user.text)
+                on_release: app.root.current = 'Second'
+
             Label:
         Label:
         BoxLayout:
@@ -52,3 +62,11 @@ Start:
                 on_press: root.add_user()
             Label:
         Label:
+
+<Second>:
+    name: 'Second'
+    Button:
+        text: 'YOU DID IT!!!!'
+        on_release: app.root.current = 'Start'
+
+
