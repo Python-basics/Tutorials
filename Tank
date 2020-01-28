@@ -1,0 +1,123 @@
+import pygame,random,sys
+
+pygame.init()
+
+white = (255,255,255)
+black = (0,0,0)
+red = (255,0,0)
+blue = (0,0,255)
+green = (0,255,0)
+
+x = 600
+y = 800
+z = [x,y]
+
+win = pygame.display
+
+bad_block_reload = 20 # delay of frames per bad block
+
+rocks = ['Lar_rock.jpg','small_rock.jpg','Med_rock.jpg']
+
+sprites = pygame.sprite.Group()
+bad_sprites = pygame.sprite.Group() # add
+
+class Block(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((50,50))
+        self.image.fill(green)
+        self.rect = self.image.get_rect()
+        self.rect.x = x//2
+        self.rect.y = 743 
+    def update(self):  
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                if self.rect.x > 5:
+                    self.rect.x -= 5
+            if event.key == pygame.K_RIGHT:
+                if self.rect.x < 542: 
+                    self.rect.x += 5
+ 
+good_block = Block() #change
+sprites.add(good_block) # change
+
+class Explosion(pygame.sprite.Sprite):
+    defaultlife = 12
+    def __init__(self,center):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.image.load('explosion.jpg')
+        self.rect = self.image.get_rect()
+        self.rect.center = center
+        self.life = self.defaultlife
+    def update(self):
+        self.life -= 1
+        if self.life <= 0:
+            self.kill()
+
+
+class Bad_Block(pygame.sprite.Sprite):
+    def __init__(self): #change
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.image.load(random.choice(rocks))
+##        self.image.fill(red)#change
+        self.rect = self.image.get_rect()
+        self.rect.x = random.randint(50,550)
+        self.rect.y = 0
+    def update(self):
+       self.rect.centery += 5
+       if self.rect.y == 750:
+           sprites.add(Explosion(self.rect.center))
+           self.kill()
+
+
+
+move_x,move_y = 0,0 
+change_x, change_y = 0,0 
+win.set_caption('My Window')
+
+surface = win.set_mode(z)
+python = pygame.image.load('python basics.jpeg')
+window = True
+clock = pygame.time.Clock()
+click = 0
+colors = [white,black,red,blue,green]
+fill = white
+text_color = black
+circle_x,circle_y = x//2,y//2
+bad_block = bad_block_reload
+while window:
+    if bad_block:
+        bad_block -= 1
+    else:
+        block = Bad_Block()
+        bad_sprites.add(block) # change
+        bad_block = bad_block_reload
+    sprite_hits = pygame.sprite.spritecollide(good_block,bad_sprites,True)
+    for block in sprite_hits:
+        sprites.add(Explosion(good_block.rect.center))
+        sprites.add(Explosion(block.rect.center))
+        good_block.kill()
+        block.kill()
+##        pygame.quit()
+##        sys.exit()
+##        pass
+    font = pygame.font.SysFont('timesnewroman', 20)
+    text = font.render('Start',0,text_color)
+    for event in pygame.event.get():
+        c_x,c_y = pygame.mouse.get_pos()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()            
+            window = False
+
+    surface.fill(fill)
+##    surface.blit(text,(x//2-19,y//2-12))
+    pygame.draw.rect(surface,black,(5,5,590,790),3)
+##    pygame.draw.circle(surface,black,(circle_x,circle_y),50,1)
+    movement = pygame.mouse.get_pos()
+    sprites.update()
+    sprites.draw(surface)
+    bad_sprites.update()
+    bad_sprites.draw(surface)
+    win.update()
+    clock.tick(30)
