@@ -85,8 +85,20 @@ fill = white
 text_color = black
 circle_x,circle_y = x//2,y//2
 bad_block = bad_block_reload
+paused = False
 while window:
-    if bad_block:
+    for event in pygame.event.get():
+        c_x,c_y = pygame.mouse.get_pos()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()            
+            window = False
+        elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_p:
+                    paused = not paused
+    if  paused == True:
+        continue
+    elif bad_block:
         bad_block -= 1
     else:
         block = Bad_Block()
@@ -103,12 +115,7 @@ while window:
 ##        pass
     font = pygame.font.SysFont('timesnewroman', 20)
     text = font.render('Start',0,text_color)
-    for event in pygame.event.get():
-        c_x,c_y = pygame.mouse.get_pos()
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()            
-            window = False
+    
 
     surface.fill(fill)
 ##    surface.blit(text,(x//2-19,y//2-12))
