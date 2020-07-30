@@ -364,7 +364,118 @@ names = ['Sam','Tom','Steve']
 for num, name in enumerate(names,start=1):
     print(num,name)
     
+# 7/28/20 longest sub-string compuer guessing game 
 
+
+##sen = 'hi Sam nice to meet you'
+##
+##comma = 'Sam,Tom,Pete,Matt'
+
+
+##name = input("Please enter names use commas: ").split(',')
+##
+##names = [i.strip() for i in name]
+##
+##print(names)
+
+
+
+##x = 'abcaafahbaabdfgz'
+##
+##sub = x[0]
+##
+##long, length = sub, 1
+##
+##for letter in x[1:]:
+##    if ord(sub[-1]) <= ord(letter):
+##        sub += letter
+##        if len(sub) > length:
+##            length = len(sub)
+##            long = sub
+##            print(long)
+##    else:
+##        sub = letter
+####        print(letter)
+##print(long)
+
+
+
+
+
+
+##dad = 'dadaddadaadada'
+##
+##count, place = 0,0
+##
+##while dad.find('dad', place) >= 0:
+##    place = dad.find('dad',place) + 1
+##    count += 1
+##print(count)
+##    
+
+##from string import ascii_lowercase as lower
+##import re
+##
+##x = 'abcaafahbaabdfgz'
+##
+##abc = ''
+##
+####for letter in lower:
+####    abc += letter+'*'
+####    print(abc)
+##
+####abc = '*'.join(lower)
+####abc += '*'
+##
+##
+##abc = 'a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*'
+##  
+##pat = re.compile(abc)
+##
+##print(max(pat.findall(x),key=len))
+
+
+##ans = False
+##
+##high = 100
+##low = 0
+##
+##input = ('Think of a number between 1 and 100. Please press enter to continue')
+##
+##
+##while not ans:
+##    guess = 0
+##    print(f'Is you number {guess}')
+##    resp = input("""Enter 'h' to indicate the guess is too high. 
+##Enter 'l' to indicate the guess is too low. 
+##Enter 'c' to indicate I guessed correctly.
+##Enter Answer: """).lower()
+##    if resp == 'h':
+##        print('My guess was too high')
+##    elif resp == 'l':
+##        print('MY guess was too low')
+##    elif resp == 'c':
+##        print('Thanks for playing with me!')
+##        ans = True
+
+
+##import re
+##
+##dad = 'dadaddadaadada'
+##
+##found = re.findall(r'(?=(\w\w\w))',dad)
+##
+##dads = [dad for dad in found if dad == 'dad']
+##
+##print(len(dads))
+
+
+
+x = 4
+def add(x):
+    print(x + 2)
+
+add(2)
 
 
 
