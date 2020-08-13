@@ -479,6 +479,86 @@ add(2)
 
 
 
+#  8/11/20 
+
+# recursion, command line, and dictionaries
+
+
+# ! factorial
+
+# 3! 
+
+##def fact(x):
+##    tot = 1
+##    while x > 0:
+##        tot *= x
+##        x -= 1
+##    print(tot)
+
+##tests = [3,4,1,0,-2,8,12,18,100]
+##
+##
+##def fact(n):
+##    if n > -1:
+##        if n == 0:
+##            return 1
+##        else:
+##            return n * fact(n-1)
+##        
+##    else:
+##        return "Negative"
+##
+##
+##
+##for test in tests:
+##    print(fact(test))
+
+
+
+### lottery powerball
+##
+##
+###  69/5 * 68/4 * 67/3 * 66/2 * 65/1 * 26  
+##
+###           (69! / 5!*(69-5)!)*26  
+##
+##
+##def odds(balls,pick,power=False):
+##    """Enter number a regular balls, number of balls
+##picked, and if they are using a powerball, you will be asked
+##for the number of powerballs"""
+##    from math import factorial as fact
+##    p_ball = 1
+##    if power:
+##        p_ball = int(input("Enter Number of powerballs: "))
+##    return (fact(balls))/(fact(5)*fact(balls-pick))*p_ball
+##    
+##    
+####print("{:,}".format(odds(69,6)))
+##
+##print(f"{odds(69,6):,}")
+
+
+##import sys
+##
+##print(sys.argv)
+
+# dictionary
+
+d = {}
+
+d['Sam'] = 43
+
+
+fruit = {'banana': 3,'apples': 1, 'grapes': 2}
+
+
+for k,v in fruit.items():
+    print(f'I have {v} {k}')
+
+    
+
+
 
 
 
