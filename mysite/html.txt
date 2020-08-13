@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<head>, <title>, <body>, <header>, <footer>, <article>, <section>,
+ <p>, <div>, <span>, <img>, <aside>, <audio>, <canvas>, <datalist>, 
+ <details>, <embed>, <nav>, <output>, <progress>, <video>, <ul>, <ol>, <li> 
