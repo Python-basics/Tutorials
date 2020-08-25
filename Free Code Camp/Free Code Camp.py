@@ -895,8 +895,38 @@ sort_book = sorted(book,key=last,reverse=True)
 for i in sort_book[:10]:
     print(i[0], ':', i[1])
 
+def my_list():
+    while True:
+        with open('shopping_list.txt','a+') as file:
+            print("""type anytime
+EXIT: to quit
+LIST: To Read and Delete
+""")
+            item = input('enter item: ')
+            if item == 'EXIT':
+                break
+            elif item == 'please tell':
+                print(file.tell())
+            elif item == 'LIST':
+                file.seek(0)
+##                print(file.read())
+                items = list(enumerate(file.read().split(),1))
+                for count, item in items:
+                    print("{:3d}) {}".format(count,item))
+                remove = int(input('enter number to delete or 0 to continue: '))
+                if remove == 0:
+                    continue
+                else:
+                    del items[remove - 1]
+                    with open('shopping_list.txt', 'w') as file:
+                        for item in items:
+                            file.write(item[1] + '\n')
+            else:
+                file.write(item + '\n')
+            
 
-
+my_list()             
+    
 
 
 
