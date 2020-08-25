@@ -912,22 +912,27 @@ LIST: To Read and Delete
 ##                print(file.read())
                 items = list(enumerate(file.read().split(),1))
                 for count, item in items:
-                    print("{:3d}) {}".format(count,item))
-                remove = int(input('enter number to delete or 0 to continue: '))
-                if remove == 0:
-                    continue
-                else:
-                    del items[remove - 1]
-                    with open('shopping_list.txt', 'w') as file:
-                        for item in items:
-                            file.write(item[1] + '\n')
+                    print(f"{count:3d}) {item}")
+##                remove = int(input('enter number to delete or 0 to continue: '))
+                while True:
+                    try:
+                        remove = int(input('enter number to delete or 0 to continue: '))
+                        if remove == 0:
+                            break
+##                            continue
+                        else:
+                            del items[remove - 1]
+                            with open('shopping_list.txt', 'w') as file:
+                                for item in items:
+                                    file.write(item[1] + '\n')
+                    except ValueError:
+                        print("If you don't want to delete please enter 0")
+                          
             else:
                 file.write(item + '\n')
             
 
-my_list()             
-    
-
+my_list()       
 
 
 
