@@ -3261,7 +3261,7 @@
 ##f.close()
 
 
-##import pygame
+##import pygame draw circle
 ##
 ##pygame.init()
 ##
