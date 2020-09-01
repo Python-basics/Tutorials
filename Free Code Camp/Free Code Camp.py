@@ -936,6 +936,137 @@ my_list()
 
 
 
+##def my_list():
+##    while True:
+##        with open('shopping_list.txt','a+') as file:
+##            print("""type anytime
+##EXIT: to quit
+##LIST: To Read and Delete
+##""")
+##            item = input('enter item: ')
+##            if item == 'EXIT':
+##                break
+##            elif item == 'please tell':
+##                print(file.tell())
+##            elif item == 'LIST':
+##                file.seek(0)
+####                print(file.read())
+##                items = list(enumerate(file.read().split(),1))
+##                for count, item in items:
+##                    print(f"{count:3d}) {item}")
+####                remove = int(input('enter number to delete or 0 to continue: '))
+##                while True:
+##                    try:
+##                        remove = int(input('enter number to delete or 0 to continue: '))
+##                        if remove == 0:
+##                            break
+####                            continue
+##                        else:
+##                            del items[remove - 1]
+##                            with open('shopping_list.txt', 'w+') as file:
+##                                for item in items:
+##                                    file.write(item[1] + '\n')
+##                                file.seek(0)
+##                                items = list(enumerate(file.read().split(),1))
+##                                for count, item in items:
+##                                    print(f"{count:3d}) {item}")
+##                    except ValueError:
+##                        print("If you don't want to delete please enter 0")
+##                          
+##            else:
+##                file.write(item + '\n')
+##            
+##
+##my_list()              
+
+
+
+
+##class rect():
+##
+##    def __init__(self,length,width):
+##        self.length = length
+##        self.width = width
+####        print(f"Your rectangle is {length} by {width}")
+##
+##    def __repr__(self):
+##        return "rect({self.length},{self.width})".format(self=self)
+##
+##    def __str__(self):
+##        return f"Your rectangle is {self.width} by {self.length}"
+##
+##    def perim(self):
+##        print(2*self.width*self.length)
+##
+##    def area(self):
+##        print(self.width*self.length)
+
+    
+##class Dog():
+##
+##    species = "Canine"
+##    voice = "Bark"
+##
+##    
+##class poodle(Dog):
+##    pass
+
+    
+##name = "Sam"
+##
+##name = iter(name)
+##
+####for i in name:
+####    print(i)
+    
+        
+# generatros
+
+
+
+##def series(num):
+##    n = 0
+##    while n < num:
+##        yield n
+##        n += 1
+##
+##
+##five = series(5)
+
+
+
+'''
+78 --> 80
+77 --> 77
+93 --> 95
+72 --> 72
+74 --> 75
+
+
+'''
+
+##def fives(x):
+##    if x%5 == 4:
+##        x += 1
+##    elif x%5 == 3:
+##        x += 2
+##    print(x)
+
+def fives(x):
+    if x%5 == 3 or x%5 == 4:
+        x += (5 - x%5)
+    print(x)
+        
+
+
+grades = [72,98,94,83,71,73,100]
+
+for grade in grades:
+    print(grade, end=" "), fives(grade)
+    
+    
+    
+
 
 
 
