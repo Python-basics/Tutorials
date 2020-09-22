@@ -1065,6 +1065,64 @@ for grade in grades:
     print(grade, end=" "), fives(grade)
     
     
+'''
+Find the 4 hidden X's
+  A B C D E F
+1 O O O O O O
+2 O O O O O O
+3 O O O O O O
+4 O O O O O O
+5 O O O O O O
+6 O O O O O O
+
+Q to quit
+enter move (eg. A5):
+'''
+
+##x = ['sam', 41,'bob',36,'steve','20']
+##
+##
+##name = [True for i in x if str(i).isnumeric()]
+##
+##
+####name = [False if str(i).isnumeric() else True for i in x]
+
+from string import ascii_uppercase as letters
+
+from random import choice
+
+a_f = list(letters[:6])
+
+num = iter(range(1,7))
+
+hidden = [choice(a_f) + str(choice(list(range(1,7)))) for i in range(4)]
+
+arr = [[ "O" for i in range(6)] for i in range(6)]
+
+play = True
+
+while play:
+    num = iter(range(1,7))
+    print(hidden)
+    print(f"Find the {len(hidden)} hidden X's")
+    print('  '+' '.join(a_f))
+    for i in arr:
+        print(next(num),end = ' ')
+        print(' '.join(i))
+    move = input("""Q to Quit
+Enter move (eg. A5):""")
+    if move.lower() == 'q':
+        play = False
+    else:
+        if move in hidden:
+            hidden.pop(hidden.index(move))
+            move = list(move)
+            arr[int(move[1]) - 1][a_f.index(move[0])] = "X"
+        else:
+            move = list(move)
+            arr[int(move[1]) - 1][a_f.index(move[0])] = " "
+
+
     
 
 
