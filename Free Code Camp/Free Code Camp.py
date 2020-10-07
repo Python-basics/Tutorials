@@ -1123,9 +1123,101 @@ Enter move (eg. A5):""")
             arr[int(move[1]) - 1][a_f.index(move[0])] = " "
 
 
+
+# Chicken Nuggets and itertools 10/6/20
+
+
+t,n,s = 20,9,6
+
+def nuggets(ttl):
+    global x
+    x = {}
+    for i in range(10):
+        for j in range(10):
+            for k in range(10):
+                tot = i*t+j*n+k*s
+                x[tot] = [i,j,k]
+                if ttl == tot:
+                    break
+            if ttl == tot:
+                break
+        if ttl == tot:
+            break
+    print(f"""{ttl}
+{x[ttl][2]}: 6 piece
+{x[ttl][1]}: 9 piece
+{x[ttl][0]}: 20 piece""")
+                
+
+comb = []
+
+for i in range(101):
+    try:
+        nuggets(i)
+        comb.append(i)
+    except:
+        print(i, 'no results')
+
+
+
+
+
+from itertools import chain
+
+
+
+x = 'abc'
+y = 'def'
+z = 'ghi'
+
+for i in chain(x,y,z):
+    print(i)
+
+arr = [x,y,z]
+
+
+for i in chain.from_iterable(arr):
+    print(i)
     
 
+from itertools import combinations as comb
 
+
+letter = "ABCDEFG"
+
+
+x = comb(letter,3)
+
+y = [''.join(i) for i in x]
+
+
+
+from itertools import count
+
+x = count(1)
+
+'''
+
+    1 
+  2 3 4 
+5 6 7 8 9 
+
+'''
+
+from itertools import count
+
+start = count(1,2) # it's the starting point
+
+num = count(1)
+
+for i in range(1,4):
+    print(('  ')*(3-i), end = '')
+    for j in range(next(start)):
+        print(next(num), end = ' ')
+    print()
+    
+    
+    
 
 
 
