@@ -1401,6 +1401,102 @@ x = ['sam', 41,'bob',36,'steve','20']
 name = [False if str(i).isnumeric() else True for i in x]
 
 
+# 11/17/20
+# second conversion, automate file naming
+# and finding specific files
+
+
+##def sec(x):
+##    d = x//86400
+##    h = (x%86400)//3600
+##    m = (x%3600)//60
+##    s = (x%60)
+##    print(d)
+##    print(f'{d:02}:{h:02}:{m:02}:{s:02}')
+##    print('{:02}:{:02}:{:02}:{:02}'.format(d,h,m,s))
+##
+##
+##
+##print('d:h')
+##sec(86400)
+##sec(14108)
+##sec(90000)
+##sec(91000)
+##sec(91121)
+
+
+
+##import time
+##
+##
+##f_name = time.asctime().replace(' ','_')+'.pkl'
+##f_name = f_name.replace(':','_')
+##f_name_2 = f_name.replace(' ','_')
+##
+##
+##
+##print(f_name)
+##print(f_name_2)
+
+
+##
+##import glob
+##
+##files = glob.glob('*.pkl')
+##
+##
+##print(files)
+
+##x = [1,43,5,27,19,4]
+##
+##x = sorted(x,reverse=True)
+##print(max(x))
+##print(min(x))
+##print('second smallest', x[-2])
+##print('second largeest',x[1])
+
+
+
+
+##walk = ['n','e','s','w']
+##
+##length = 4
+##
+##
+##def is_valid_walk(time,walk):
+##    #determine if walk is valid
+##    
+##    move = [0,0]
+##    if len(walk) != time:
+##        return False
+##    for i in walk:
+##        if i == 'n':
+##            move[0] += 1
+##        elif i == 'e':
+##            move[1] += 1
+##        elif i == 's':
+##            move[0] -= 1
+##        elif i == 'w':
+##            move[1] -= 1
+###        print(move)
+##    return move == [0,0]
+##
+##
+##
+##def is_valid_walk(time,walk):
+##    #determine if walk is valid your code goes here
+##    north = walk.count('n')
+##    south = walk.count('s')
+##    east = walk.count('e')
+##    west = walk.count('w')
+##
+##    dis = len(walk)
+##
+##    return (north == south) and (east == west) and (time == dis)
+##
+
+
+
 
 
 
