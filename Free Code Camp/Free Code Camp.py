@@ -1495,7 +1495,62 @@ name = [False if str(i).isnumeric() else True for i in x]
 ##    return (north == south) and (east == west) and (time == dis)
 ##
 
+# 12/8/20 Door game, questions, and more
 
+##import random
+##print("""ESCAPE ROOM FIND THE RIGHT DOOR TO EXIT
+##EACH TIME YOU FAIL THE DOOR WILL CHANGE POSITION""")
+##def doorgame():
+##    life = 5
+##    while life > 0:
+##        door = random.randint(1,5)
+##        print("Door: ", door) # for debugging
+##        print("Life: ", life)
+##        life -= 1
+##        guess = int(input("Enter a guess of door: "))
+##        if guess != door:
+##            if life > 0:
+##                print("Guess Again!")
+##                continue
+##            else:
+##                print("You Lose all of your life. The correct door was " + str(door))
+##        
+##        else:
+##            print("Well, done, you managed to escape!")
+##        print("Do you want to play agian?")
+##        q = input("Yes or No").lower()[0]
+##        if q == "y":
+##            life = 5
+##        else:
+##            life = 0
+##    else:
+##        print("Game Over")
+##        print("Thank You for Playing!!!!")
+##        
+##doorgame()      
+##        
+
+
+### multipule character changes
+##
+##import re
+##
+##file = 'thur Nov 28 2020 18:16:16'
+##
+##
+####change = " :"
+####
+####for char in change:
+####    file = file.replace(char,"_")
+####
+####print(file)
+##
+##
+##file = re.sub("[ :]","_",file)
+
+
+if __name__ == "__main__":
+    x = 1
 
 
 
