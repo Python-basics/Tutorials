@@ -6,8 +6,6 @@ from keys import ameritrade
 
 
 
-##key = 'O5MHDL7WJMXBCG8AROG94EK6FXDKGTPN'
-
 url = 'https://api.tdameritrade.com/v1/marketdata/quotes'
 
 url = 'https://api.tdameritrade.com/v1/instruments'
