@@ -184,25 +184,4 @@ companies = df[new]
 ##print(data)
 ##for key in data["AA"]['fundamental']:
 ##    print(f"{key}: {data['AA']['fundamental']}")
-'''
-
-watch eminent possible purchase
-watching close daily check
-check  hasn't dropped enough weekly check
-
-1) watch
-2) watching
-3) check
-
-flat
-weired
-fund
-gold
-drug
-volitile
-
-
-too expensive
-no options
-'''
 
