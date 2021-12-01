@@ -1,0 +1,71 @@
+# Rock Paper Scissors
+
+"""
+Rock bets Scissors
+Scissors bets Paper
+Paper bets Rock
+"""
+
+import random
+
+def rps():
+    print("Best of 5")
+    choice = ["Rock","Paper","Scissors"]
+    me = you = 0
+    while True:
+        if me > 2 or you > 2:
+            if you > me:
+                print(f"You {you} Me {me}")
+            else:
+                print(f"Me {me} You {you}")
+            again = input("Would you like to play again: ")
+            if again.lower()[0] == "y":
+                me = you = 0
+                print("Best of 5")
+                continue
+            else:
+                print("Okay Thanks for playing")
+                break
+        you_guess = input("Rock Paper Scissors: ")
+        me_guess = random.choice(choice)
+        if you_guess.lower()[0] not in ["r","p","s","score"]:
+            print("Please try again: R P S")
+            continue
+        if you_guess.lower() == 'score':
+            if you > me:
+                print(f"You {you} Me {me}")
+            else:
+                print(f"Me {me} You {you} ")
+            continue
+        if you_guess.lower() == me_guess.lower():
+            print("Tie")
+        elif you_guess.lower()[0] == "r":
+            if me_guess.lower()[0] == "s":
+                you += 1
+                print("You Won")
+                print(f"{you_guess.title()} bets {me_guess}")
+            else:
+                me += 1
+                print("I Won")
+                print(f"{me_guess} bets {you_guess.title()}")
+        elif you_guess.lower()[0] == "s":
+            if me_guess.lower()[0] == "p":
+                you += 1
+                print("You Won")
+                print(f"{you_guess.title()} bets {me_guess}")
+            else:
+                me += 1
+                print("I Won")
+                print(f"{me_guess} bets {you_guess.title()}")
+        elif you_guess.lower()[0] == "p":
+            if me_guess.lower()[0] == "r":
+                you += 1
+                print("You Won")
+                print(f"{you_guess.title()} bets {me_guess}")
+            else:
+                me += 1
+                print("I Won")
+                print(f"{me_guess} bets {you_guess.title()}")
+        
+
+rps()
